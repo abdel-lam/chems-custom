@@ -7,7 +7,8 @@
 
         <xpath expr="//table[@name='invoice_line_table']//td[@name='account_invoice_line_name']" position="replace">
             <td name="account_invoice_line_name">
-                <span t-if="line.name" t-field="product_id.name" t-options="{'widget': 'text'}"/>
+                <span t-if="line.product_id" t-field="line.product_id.name" t-options="{'widget': 'text'}"/>
+                <span t-if="line.name" t-field="line.name" t-options="{'widget': 'text'}"/>
             </td>
         </xpath>
 
