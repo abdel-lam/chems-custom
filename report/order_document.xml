@@ -1,0 +1,15 @@
+<odoo>
+
+    <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+    
+        <xpath expr="//div[@name='due_date']" position="replace"/>
+        <xpath expr="//div[@id='payment_term']" position="replace"/>
+
+        <xpath expr="//table[@name='account_invoice_line_accountable']//td[@name='account_invoice_line_name']" position="replace">
+            <td name="account_invoice_line_name">
+                <span t-if="line.name" t-field="product_id.name" t-options="{'widget': 'text'}"/>
+            </td>
+        </xpath>
+
+    </template>
+</odoo>
